@@ -10,10 +10,10 @@
 function ca_sub_pages_user_default_roles() {
   $roles = array();
 
-  // Exported role: sub page admin
+  // Exported role: sub page admin.
   $roles['sub page admin'] = array(
     'name' => 'sub page admin',
-    'weight' => '5',
+    'weight' => 5,
     'machine_name' => 'sub_page_admin',
   );
 
