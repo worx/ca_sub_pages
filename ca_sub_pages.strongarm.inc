@@ -24,5 +24,12 @@ function ca_sub_pages_strongarm() {
   $strongarm->value = '[node:title]';
   $export['pathauto_node_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_pattern';
+  $strongarm->value = '[term:vocabulary]/[term:parents:join-path]/[term:name]';
+  $export['pathauto_taxonomy_term_pattern'] = $strongarm;
+
   return $export;
 }
