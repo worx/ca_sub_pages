@@ -30,6 +30,16 @@ function ca_sub_pages_user_default_permissions() {
     'module' => 'contextual',
   );
 
+  // Exported permission: 'access site map'.
+  $permissions['access site map'] = array(
+    'name' => 'access site map',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'site_map',
+  );
+
   // Exported permission: 'administer blocks'.
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
