@@ -85,7 +85,7 @@ function ca_sub_pages_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'CA Sub Pages: Add Sub Page Worx Aurora Template one',
+    'title' => 'Aurora Sub Pages: Add Sub Page',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
