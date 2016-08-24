@@ -20,9 +20,9 @@ function ca_sub_pages_install() {
   variable_set('imce_roles_profiles', $imce_roles_profiles);
 
   // Set the Pathauto for the default node pattern.
-  variable_set('pathauto_node_pattern', 'content/[node:title]');
+  variable_set('pathauto_node_pattern', '[node:title]');
 
   // Set the Pathauto for the default term pattern.
-  variable_set('pathauto_taxonomy_term_pattern', '[term:vocabulary]/[term:name');
+  variable_set('pathauto_taxonomy_term_pattern', '[term:vocabulary]/[term:name]');
 
 }
