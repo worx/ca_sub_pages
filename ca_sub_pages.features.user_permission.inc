@@ -36,6 +36,7 @@ function ca_sub_pages_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'site_map',
   );
