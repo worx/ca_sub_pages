@@ -1,5 +1,5 @@
 name = CA Sub Pages
-description = CA Sub Pages aAllows for the creation of sub-pages of basic pages.
+description = CA Sub Pages allows for the creation of sub-pages of basic pages.
 core = 7.x
 package = Features
 version = 7.x-1.11
