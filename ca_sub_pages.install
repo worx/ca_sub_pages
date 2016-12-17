@@ -25,4 +25,13 @@ function ca_sub_pages_install() {
   // Set the Pathauto for the default term pattern.
   variable_set('pathauto_taxonomy_term_pattern', '[term:vocabulary]/[term:name]');
 
+  // Set the .
+  variable_set('date_format_long', 'l, F j, Y - g:ia');
+
+  // Set the .
+  variable_set('date_format_medium', 'D, m/d/Y - g:ia');
+
+  // Set the .
+  variable_set('date_format_short', 'm/d/Y - g:ia');
+
 }
