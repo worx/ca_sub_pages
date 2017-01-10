@@ -100,6 +100,92 @@ function ca_sub_pages_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['ca_sub_pages_add_sub_page'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'mobile_m_redirect';
+  $page->task = 'page';
+  $page->admin_title = 'Mobile M Redirect';
+  $page->admin_description = '';
+  $page->path = 'm/%url';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array(
+    'url' => array(
+      'id' => 1,
+      'identifier' => 'String',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 1,
+      ),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_mobile_m_redirect__http_response_5e466a74-d585-43d5-b8c8-379fa751db8f';
+  $handler->task = 'page';
+  $handler->subtask = 'mobile_m_redirect';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'HTTP response code',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => '%url',
+    'name' => '',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['mobile_m_redirect'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'mobile_redirect';
+  $page->task = 'page';
+  $page->admin_title = 'Mobile Redirect';
+  $page->admin_description = '';
+  $page->path = 'mobile/%url';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array(
+    'url' => array(
+      'id' => 1,
+      'identifier' => 'String',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 1,
+      ),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page-mobile_redirect__http';
+  $handler->task = 'page';
+  $handler->subtask = 'mobile_redirect';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'HTTP response code',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => '%url',
+    'name' => 'http',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['mobile_redirect'] = $page;
+
   return $pages;
 
 }
