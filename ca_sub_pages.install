@@ -34,4 +34,97 @@ function ca_sub_pages_install() {
   // Set the .
   variable_set('date_format_short', 'm/d/Y - g:ia');
 
+  // Set the permissions for Anonymous
+  user_role_change_permissions(1, 
+    array(
+      'access site map' => TRUE,
+    )
+  );
+
+  // Set the permissions for Authenticated
+  user_role_change_permissions(2, 
+    array(
+      'access site map' => TRUE,
+    )
+  );
+
+  // Set the permissions for Administrator
+  user_role_change_permissions(3, 
+    array(
+      'access all webform results' => TRUE,
+      'access contextual links' => TRUE,
+      'administer blocks' => TRUE,
+      'create page content' => TRUE,
+      'delete any page content' => TRUE,
+      'delete own page content' => TRUE,
+      'edit any page content' => TRUE,
+      'edit own page content' => TRUE,
+      'view pane admin links' => TRUE,
+    )
+  );
+
+  // Set the permissions for Webmaster
+  user_role_change_permissions(4, 
+    array(
+      'access all webform results' => TRUE,
+      'access contextual links' => TRUE,
+      'administer blocks' => TRUE,
+      'create page content' => TRUE,
+      'delete any page content' => TRUE,
+      'delete own page content' => TRUE,
+      'edit any page content' => TRUE,
+      'edit own page content' => TRUE,
+      'view pane admin links' => TRUE,
+    )
+  );
+}
+
+/**
+ * Set the permissions for Anonymous, Authenticated, Webmaster and Administrator as a one time event rather than handled with features to allow additonal roles to be 
+ * given these permissions without overridding the feature.
+ */
+function ca_sub_pages_update_7000() {
+// Set access site map for Anonymous
+  user_role_change_permissions(1, 
+    array(
+      'access site map' => TRUE,
+    )
+  );
+
+  // Set access site map for Authenticated
+  user_role_change_permissions(2, 
+    array(
+      'access site map' => TRUE,
+    )
+  );
+
+  // Set the permissions for Administrator
+  user_role_change_permissions(3, 
+    array(
+      'access all webform results' => TRUE,
+      'access contextual links' => TRUE,
+      'administer blocks' => TRUE,
+      'create page content' => TRUE,
+      'delete any page content' => TRUE,
+      'delete own page content' => TRUE,
+      'edit any page content' => TRUE,
+      'edit own page content' => TRUE,
+      'view pane admin links' => TRUE,
+    )
+  );
+
+  // Set the permissions for Webmaster
+  user_role_change_permissions(4, 
+    array(
+      'access all webform results' => TRUE,
+      'access contextual links' => TRUE,
+      'administer blocks' => TRUE,
+      'create page content' => TRUE,
+      'delete any page content' => TRUE,
+      'delete own page content' => TRUE,
+      'edit any page content' => TRUE,
+      'edit own page content' => TRUE,
+      'view pane admin links' => TRUE,
+    )
+  );
 }
