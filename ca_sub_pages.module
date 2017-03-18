@@ -5,3 +5,41 @@
  */
 
 include_once('ca_sub_pages.features.inc');
+
+/**
+ * Implements hook_token_info().
+ */
+function ca_sub_pages_token_info() {
+  
+  // Define token value, custom_title is the token will be used as [node:worx_title]
+  $data['tokens']['node']['worx_title'] = array(
+    'name' => t("Worx Title"),
+    'description' => t("Node Title that removes / as path auto can't remove the / and have the cusome paths work."),
+  );
+  
+  // Return associative array of tokens & token types
+  return $data;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function ca_sub_pages_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+
+  // Check if token type is node
+  if($type == 'node'){
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        // Check token is worx_title
+        case 'worx_title':
+          $search  = array(' w/', '/');
+          $replace = array(' ', '-');
+          //print_r($data['node']->title);
+          $replacements[$original] = str_replace($search, $replace, $data['node']->title);
+          break;
+      }
+    }
+  }
+  return $replacements;
+}
