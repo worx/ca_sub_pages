@@ -77,6 +77,15 @@ function ca_sub_pages_install() {
       'view pane admin links' => TRUE,
     )
   );
+
+  // Set the Pathauto for the node.
+  variable_set('pathauto_node_page_pattern', '[node:menu-link:parent:url:path]/[node:title]');
+
+  // Set the Pathauto for the base node.
+  variable_set('pathauto_node_pattern', '[node:title]');
+
+  // Set the Pathauto for the base term.
+  variable_set('pathauto_node_pattern', '[term:vocabulary]/[term:name]');
 }
 
 /**
