@@ -16,6 +16,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = path
 dependencies[] = pathauto
+dependencies[] = robotstxt
 dependencies[] = role_export
 dependencies[] = site_map
 dependencies[] = strongarm
